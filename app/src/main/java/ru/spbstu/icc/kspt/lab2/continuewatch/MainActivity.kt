@@ -34,7 +34,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         Log.d("MainActivity", "onStart()")
-
+        active = true
+        secondsElapsed = sharedPref.getInt(SECONDS, 0)
+        Log.d("MainActivity", "Seconds = $secondsElapsed")
+        Log.d("MainActivity", "active == true")
         super.onStart()
     }
 
@@ -51,10 +54,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         Log.d("MainActivity", "onResume()")
-        active = true
-        secondsElapsed = sharedPref.getInt(SECONDS, 0)
-        Log.d("MainActivity", "Seconds = $secondsElapsed")
-        Log.d("MainActivity", "active == true")
         super.onResume()
     }
 
